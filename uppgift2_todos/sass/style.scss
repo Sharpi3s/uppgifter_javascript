@@ -1,0 +1,134 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
+
+h4 {
+    max-width: 20ch;
+    font-size: 12pt;
+}
+
+// #todoForm {
+//     padding: 0;
+// }
+
+#error {
+    color: red;
+    font-size: 1.2rem;
+}
+
+.done {
+    background-color: #cccccc;
+    text-decoration: line-through;
+    color: #717171;
+}
+
+#todoInput {
+    padding: 1.5rem 0 1.5rem 1rem;
+    font-size: 1.2rem;
+}
+
+.btn-sub {
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 0 2rem;
+    
+    
+}
+.btn-sub:hover {
+    filter: brightness(150%);
+    color: #ffffff;
+    
+}
+
+
+/* .green {
+    color: seagreen;
+}
+
+.white {
+    color: white;
+} */
+
+.box {
+    box-shadow: 3px 5px 7px #00000036;
+    border-radius: 50px;
+}
+
+.contain {
+    display: flex;
+}
+
+.btn-remove {
+    // padding: 8px 8px;
+    background-color: transparent;
+    margin-right: 1rem;
+}
+
+.fa-trash-alt {
+    font-size: 28pt;
+    color: #000000;
+}
+
+.color {
+    background-color: #37d7b2;
+    background-image: url(/images/check_white.png);
+    background-size: contain;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    // background-color: rgb(25, 165, 86) ;
+    /* opacity: 100%; */
+} 
+
+.btn-check {
+    border: 2px solid #000000;
+    /* background-color: #ffffff; */
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+    /* opacity: 15%; */
+    margin-right: 1.5rem;
+    margin-left: 1rem;
+}
+
+.btn-check:hover {
+    background-color: rgb(187, 187, 187);
+}
+
+.btn-check:focus {
+    box-shadow: none;
+}
+
+@media(min-width: 768px) {
+    h4 {
+        max-width: 30ch;
+        font-size: 16pt;
+    }
+    
+}
+
+@media(min-width: 1024px) {
+    h4 {
+        max-width: 35ch;
+        font-size: 16pt;
+    }
+    
+}
+
+@media(min-width: 1200px) {
+    h4 {
+        max-width: 60ch;
+        font-size: 18pt;
+        // padding: 1rem 0;
+    }
+    
+}
