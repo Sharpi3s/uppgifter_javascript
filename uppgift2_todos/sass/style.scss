@@ -30,6 +30,10 @@ h4 {
     color: #717171;
 }
 
+.input-group {
+    padding: 0;
+}
+
 #todoInput {
     padding: 1.5rem 0 1.5rem 1rem;
     font-size: 1.2rem;
@@ -45,26 +49,28 @@ h4 {
 }
 .btn-sub:hover {
     filter: brightness(150%);
-    color: #ffffff;
-    
+    color: #ffffff; 
+}
+
+.btn-sub:focus {
+    box-shadow: none;  
 }
 
 
-/* .green {
-    color: seagreen;
+#output {
+    margin-bottom: 2rem;
 }
-
-.white {
-    color: white;
-} */
 
 .box {
     box-shadow: 3px 5px 7px #00000036;
-    border-radius: 50px;
+    border-radius: 10px;
+    padding: 0.7rem;
+    margin: 0.5rem 0rem;
 }
 
 .contain {
     display: flex;
+    align-items: center;
 }
 
 .btn-remove {
@@ -74,7 +80,7 @@ h4 {
 }
 
 .fa-trash-alt {
-    font-size: 28pt;
+    font-size: 20pt;
     color: #000000;
 }
 
@@ -91,21 +97,15 @@ h4 {
 
 .btn-check {
     border: 2px solid #000000;
-    /* background-color: #ffffff; */
     border-radius: 50%;
-    height: 2.5rem;
-    width: 2.5rem;
-    /* opacity: 15%; */
+    height: 2rem;
+    width: 2rem;
     margin-right: 1.5rem;
     margin-left: 1rem;
 }
 
-.btn-check:hover {
-    background-color: rgb(187, 187, 187);
-}
-
 .btn-check:focus {
-    box-shadow: none;
+    box-shadow: none;  
 }
 
 @media(min-width: 768px) {
@@ -125,6 +125,21 @@ h4 {
 }
 
 @media(min-width: 1200px) {
+
+    .btn-check {
+        border: 2px solid #000000;
+        border-radius: 50%;
+        height: 2.5rem;
+        width: 2.5rem;
+        margin-right: 1.5rem;
+        margin-left: 1rem;
+    }
+
+    .fa-trash-alt {
+        font-size: 28pt;
+        color: #000000;
+    }
+
     h4 {
         max-width: 60ch;
         font-size: 18pt;

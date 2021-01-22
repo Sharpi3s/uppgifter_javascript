@@ -1,4 +1,4 @@
-// git remote add origin https://github.com/Sharpi3s/uppgifter_javascript.git
+
 
 
 
@@ -26,16 +26,13 @@ fetchTodos();
 const newTodo = (todo) => {
     let card = document.createElement('div');
     card.setAttribute('id', `${todo.id}`)
-    card.classList.add('box', 'p-3', 'my-3', 'todo', 'col-xl-12');
+    card.classList.add('box', 'todo', 'col-xl-12');
     if(todo.completed) {
         card.classList.add('done');
     } else {
         card.classList.remove('done');
     }
-    // if(todo.completed) {
-    //     card.classList.add('done');
-    // } 
-    // console.log(todo.id)
+
 
     let innerCard = document.createElement('div');
     innerCard.classList.add('d-flex', 'justify-content-between', 'align-items-center');
@@ -63,54 +60,34 @@ const newTodo = (todo) => {
         // createTodo();
     })
     
-    // button.addEventListener('click', () => console.log(todos))
     let i = document.createElement('i');
     i.classList.add('far', 'fa-trash-alt');
-    // i.classList.add('fas', 'fa-check')
-    // if(todo.completed) {
-    //     // i.classList.add('color');
-    //     // i.classList.remove('white');
-    //     i.classList.remove('hidden');
-    //     // i.style.color="green";
-    // } 
-    // else {
-    //     // i.style.color="white";
-    //     // i.classList.add('white');
-    //     // i.classList.remove('color');
-    // }
-
 
     let check = document.createElement('button');
     check.classList.add('btn', 'btn-check', 'color')
-
     if(todo.completed) {
         check.classList.add('color');
+        
         // i.classList.remove('hidden');
-     } 
-     else {
+     } else {
         check.classList.remove('color');
      }
-
     check.addEventListener('click', () => {
-        // i.style.color = i.style.color === 'green' ? 'white' : 'white';
-        // check.classList.toggle('green' && 'white')
-        // i.classList.toggle('color');
         check.classList.toggle('color')
         card.classList.toggle('done');
         button.classList.toggle('hidden');
         
-        // i.classList.add('fa-check')
         todos.map(t => {
             if(t.id === todo.id){
                 todo.completed = !todo.completed;
-                // console.log(i)
-                // console.log(todo.id)
-            } 
-            return t 
-        })
-    })
 
-  
+            } 
+            // todos.sort((a,b) => a.completed - b.completed)
+            return t 
+        }) 
+        listTodos(todos.sort((a,b) => a.completed - b.completed)); 
+    })
+   
 
     button.appendChild(i);
     
@@ -121,10 +98,13 @@ const newTodo = (todo) => {
     innerCard.appendChild(button);
     card.appendChild(innerCard);
     output.appendChild(card);
+    
 }
 
 const listTodos = () => {
     output.innerHTML = '';
+    todos.sort((a,b) => a.completed - b.completed)
+
     todos.forEach(todo => {
         newTodo(todo);
     });
