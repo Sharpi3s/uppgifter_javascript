@@ -6,12 +6,11 @@ const error = document.querySelector('#error');
 let todos = [];
 
 const fetchTodos = () => {
-     //    http://jsonplaceholder.typicode.com/posts?_start=10&_limit=10
+
     fetch('https://jsonplaceholder.typicode.com/todos?_start20=&_limit=10')
     .then(res => res.json())
     .then(data => {
         todos = data;
-        // console.log(todos);
         listTodos();
     })
 }
@@ -20,6 +19,7 @@ fetchTodos();
 
 
 const newTodo = (todo) => {
+
     let card = document.createElement('div');
     card.setAttribute('id', `${todo.id}`)
     card.classList.add('box', 'todo', 'col-xl-12');
@@ -28,7 +28,6 @@ const newTodo = (todo) => {
     } else {
         card.classList.remove('done');
     }
-
 
     let innerCard = document.createElement('div');
     innerCard.classList.add('d-flex', 'justify-content-between', 'align-items-center');
@@ -41,19 +40,15 @@ const newTodo = (todo) => {
     let contain = document.createElement('div');
     contain.classList.add('contain')
 
-
-
     let button = document.createElement('button');
     button.classList.add('btn', 'btn-remove', 'hidden'); //
-    // button.innerText = 'X';
     if(todo.completed) {
         button.classList.remove('hidden');
     }
     button.addEventListener('click', () => {
-        // todos = todos.filter(todo => todo.id !== e.target.parentNode.parentNode.parentNode.id)
+
         todos = todos.filter(todo => todo.id != card.id)
         listTodos();
-        // createTodo();
     })
     
     let i = document.createElement('i');
@@ -62,9 +57,7 @@ const newTodo = (todo) => {
     let check = document.createElement('button');
     check.classList.add('btn', 'btn-check', 'color')
     if(todo.completed) {
-        check.classList.add('color');
-        
-        // i.classList.remove('hidden');
+        check.classList.add('color');;
      } else {
         check.classList.remove('color');
      }
@@ -76,9 +69,7 @@ const newTodo = (todo) => {
         todos.map(t => {
             if(t.id === todo.id){
                 todo.completed = !todo.completed;
-
             } 
-            // todos.sort((a,b) => a.completed - b.completed)
             return t 
         }) 
         listTodos(todos.sort((a,b) => a.completed - b.completed)); 
@@ -86,8 +77,6 @@ const newTodo = (todo) => {
    
 
     button.appendChild(i);
-    
-    // contain.appendChild(check);
     contain.appendChild(check);
     contain.appendChild(title);
     innerCard.appendChild(contain);
@@ -121,7 +110,6 @@ const createTodo = (title) => {
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data)
         todos.unshift(data);
         listTodos();
     })
