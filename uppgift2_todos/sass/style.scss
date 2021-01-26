@@ -4,10 +4,14 @@
     box-sizing: border-box;
 }
 
-body {
-    // background: linear-gradient(0deg, rgba(221,98,113,1) 0%, rgba(148,81,108,1) 29%, rgba(76,66,109,1) 100%);
-    background-color: #eeeeee;
-    
+
+#bg {
+    // content: "";
+    background-image: url(/images/bg-icons.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    // filter: brightness(50%);
 }
 
 .hidden {
@@ -31,9 +35,9 @@ h4 {
 }
 
 .done {
-    background-color: #76767649 !important;
+    background-color: #b8b8b8e5 !important;
     text-decoration: line-through;
-    color: #717171 !important;
+    color: #717171b6 !important;
 }
 
 .input-group {
@@ -69,7 +73,7 @@ h4 {
 
 
 #output {
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
 }
 
 /* 
@@ -79,7 +83,7 @@ h4 {
 
 .box {
     box-shadow: 3px 5px 7px #00000036;
-    background-color: #ffffff66;
+    background-color: #ffffffdb;
     border-radius: 10px;
     padding: 0.7rem;
     margin: 0.5rem 0rem;
@@ -118,12 +122,13 @@ h4 {
 .btn-check {
     background-color: #ffffff66;
     border: 1px solid #c9c9c9a5 !important;
-    background-image: url(/images/minus.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    // background-image: url(/images/minus.png);
+    // background-repeat: no-repeat;
+    // background-size: contain;
+    // background-position: center;
+    
     // border: none !important;
-    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.149), inset 2px 2px 0px 2px #ffffff98;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.183), inset 2px 2px 0px 2px #ffffff98;
     border-radius: 50%;
     height: 2rem;
     width: 2rem;
