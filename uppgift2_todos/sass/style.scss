@@ -4,15 +4,14 @@
     box-sizing: border-box;
 }
 
-
-#bg {
-    // content: "";
+body {
     background-image: url(/images/bg-icons.png);
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    // filter: brightness(50%);
+    // background-position: center;
+    background-repeat: repeat;
+    min-height: 100vh;
 }
+
 
 .hidden {
     visibility: hidden;
@@ -35,7 +34,7 @@ h4 {
 }
 
 .done {
-    background-color: #b8b8b8e5 !important;
+    background-color: #b8b8b8 !important;
     text-decoration: line-through;
     color: #717171b6 !important;
 }
@@ -83,7 +82,7 @@ h4 {
 
 .box {
     box-shadow: 3px 5px 7px #00000036;
-    background-color: #ffffffdb;
+    background-color: #ffffffe0;
     border-radius: 10px;
     padding: 0.7rem;
     margin: 0.5rem 0rem;
@@ -120,7 +119,7 @@ h4 {
 } 
 
 .btn-check {
-    background-color: #ffffff66;
+    background-color: #ffffffb4;
     border: 1px solid #c9c9c9a5 !important;
     // background-image: url(/images/minus.png);
     // background-repeat: no-repeat;

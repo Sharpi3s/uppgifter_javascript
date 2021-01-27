@@ -61,17 +61,25 @@ const newTodo = (todo) => {
      } else {
         check.classList.remove('color');
      }
+
     check.addEventListener('click', () => {
         check.classList.toggle('color')
         card.classList.toggle('done');
         button.classList.toggle('hidden');
-        
+        console.log(todo)
         todos.map(t => {
             if(t.id === todo.id){
                 todo.completed = !todo.completed;
             } 
             return t 
         }) 
+        
+        // if(todo.completed === true) {
+        //     todo.completed = false;
+        // } else {
+        //     todo.completed = true;
+        // }
+
         listTodos(todos.sort((a,b) => a.completed - b.completed)); 
     })
    
@@ -96,24 +104,77 @@ const listTodos = () => {
 }
 
 
-const createTodo = (title) => {
+// const createTodo = (title) => {
+//     fetch('https://jsonplaceholder.typicode.com/todos?_start=20&_limit=10', {
+//         method: 'POST', 
+//         body: JSON.stringify({
+//             title,
+//             completed: false
+//           }),
+//           headers: {
+//             'Content-type': 'application/json; charset=UTF-8',
+//           },
+//     })
+//     .then((response) => response.json())
+//     .then(data => {
+//         todos.unshift(data);
+        
+//         listTodos();
+//     })   
+    
+// }
 
-    fetch('https://jsonplaceholder.typicode.com/todos?_start=20&_limit=10',{
-        method: 'POST',
-        headers: {
-        'Content-type': 'application/json; charset=UTF-8'
-        },
-        body: JSON.stringify({
+
+const createTodo = async title => {
+    let url = 'https://jsonplaceholder.typicode.com/todos';
+  
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+      body: JSON.stringify({
         title,
         completed: false
-        })
+      }) 
+        
+      
     })
-    .then(res => res.json())
-    .then(data => {
-        todos.unshift(data);
-        listTodos();
-    })
-}
+  
+    const todo = await res.json()
+  
+    todo.id = uuidv4();
+  
+    todos.unshift(todo)
+    listTodos(todos);
+  }
+
+
+
+// const createTodo = async(title) => {
+//     try {
+//         const res = await fetch('https://jsonplaceholder.typicode.com/todos', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-type': 'application/json; charset=UTF-8'
+//             },
+//             body: JSON.stringify({
+//                 title,
+//                 completed: false
+//             })
+//         });
+
+//         const data = await res.json();
+//         todos.unshift(data);
+//         listTodos();
+//     }
+//     catch(error) {
+//         console.log(error);
+//     }
+// }
+
+
+
 
 const validate = () => {
 
