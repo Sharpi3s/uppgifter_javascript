@@ -74,7 +74,6 @@ const validateEmail = () => {
     const check = re.test(input.value)
 
     if (input.value === '') {
-        
         input.classList.add('is-invalid');
         error.innerHTML = 'Cannot be blank';
     } else if (check == false) {
@@ -163,6 +162,10 @@ addUser.addEventListener('click', (e) => {
         moveLastName.classList.remove('move');
         moveEmail.classList.remove('move');
 
+        firstname.classList.remove('is-valid');
+        lastname.classList.remove('is-valid');
+        email.classList.remove('is-valid');
+
         firstname.value = '';
         lastname.value = '';
         email.value = '';
@@ -207,6 +210,7 @@ addUser.addEventListener('click', (e) => {
     }
 
 }) 
+
 
 //---------------------------------------------------------
 // Event Listener till remove knappen som tar bort vald användare.
