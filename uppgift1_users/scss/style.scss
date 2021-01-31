@@ -4,9 +4,6 @@
 
 body {
   background-color: #949494; 
-  
-  // background-color: #598c86;  
-  
   margin: 0;
   padding: 0;
 }
@@ -22,7 +19,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0 1rem 0;
-  
 }
 
 .form {
@@ -138,37 +134,16 @@ small {
   overflow: auto;
 }
 
-// #list {
-//     overflow: auto;
-// }
-
 .list-element {
   padding: 0 !important;
   margin-bottom: 0.5rem;
-  // display: flex;
-  // flex-direction: column;
 }
 
 #btns {
   display: flex;
   width: 5.5rem;
   height: 2.5rem;
-  // position: relative;
 }
-
-// .changeParent {
-  
-//   position: relative;
-// }
-
-// .change {
-//   z-index: 1;
-//   height: 2rem;
-//   width: 2.2rem;
-//   position: absolute;
-//   left: 0;
-//   cursor: pointer;
-// }
 
 .btn-change {
   background-color: #56C8BB;
@@ -177,14 +152,13 @@ small {
   width: 2rem;
   padding: 3px 8px;
   margin-right: 0.5rem;
-  // position: absolute;
   left: 0;
-  // height: 2rem;
-  // width: 3rem;
+
   &:hover {
     filter: brightness(125%);
     color: #ffffff;
   }
+
   &:focus {
     border: none;
     outline: none;
@@ -201,13 +175,12 @@ small {
   width: 2rem;
   padding: 2px 3px;
   font-weight: 700;
-  // position: absolute;
-  
   right: 0;
+
   &:hover {
     filter: brightness(125%);
-
   }
+  
   &:focus {
     border: none;
     outline: none;

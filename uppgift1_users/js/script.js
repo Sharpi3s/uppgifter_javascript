@@ -1,5 +1,6 @@
-let users = []
+let users = [] // Tom array som kommer hålla users som skapas sen 
 
+// Deklarerar allt som man behöver komma åt från HTML koden.
 const form = document.querySelector('.form');
 const title = document.querySelector('.title')
 const addUser = document.querySelector('#submit');
@@ -14,10 +15,11 @@ const error = document.querySelector('#error-email');
 const moveFirstName = document.querySelector('#moveFirstName');
 const moveLastName = document.querySelector('#moveLastName');
 const moveEmail = document.querySelector('#moveEmail');
-
+// change används senare när jag vill kunna ändra namn på användare längre ner. 
 let change = false;
+// behöver kunna spara ett värde senare som behöver vara åtkomlig i flera funktioner.
 let userId
-
+// sätter strukturen på hur body till varje användare ska se ut 
 const listUser = () => {
     list.innerHTML = '';
 
@@ -36,6 +38,7 @@ const listUser = () => {
         <hr>`
     })
 }
+//Startar funktionen så det blir synligt på sidan
 listUser();
 
 //---------------------------------------------------------
@@ -43,11 +46,9 @@ listUser();
 const validate = (i) => {
     let input = document.querySelector('#' + i)
     let error = document.querySelector('#error-' + i)
-    const re = /^[A-ZÅÄÖa-zåäö\s\-]+$/
-    // const re = /^[A-Za-z- ]+$/
+    const re = /^[A-ZÅÄÖa-zåäö\s\-]+$/ // Får innehålla A-Ö samt mellanrum och bindestreck ifall personen har dubbelnamn 
     const check = re.test(input.value)
 
-    // console.log(input)
     if (input.value === '') {
         input.classList.add('is-invalid');
         error.innerHTML = 'Cannot be blank';
@@ -89,6 +90,7 @@ const validateEmail = () => {
 }
 
 //---------------------------------------------------
+// För att kunna ändra användaren. Med map plockar man ut en user och flyttar dess value till inputarna.
 const changeUser = (id) => {
 
     return users.map(user => {
@@ -183,15 +185,14 @@ addUser.addEventListener('click', (e) => {
         error.innerHTML = 'Email already exist';
         return false  
     }
-    // if(validate('firstname') == true && validate('lastname') == true && validateEmail() == true)
-    if(validate('firstname', 'lastname') == true && validateEmail() == true) {
+   
+    if(validate('firstname', 'lastname') == true && validateEmail() == true) { // om valideringen är true på förnamn, eftern 
         firstname.classList.remove('is-valid');
         lastname.classList.remove('is-valid');
         email.classList.remove('is-valid');
 
         let newuser = {
-            // id: Date.now().toString(),
-            id: uuidv4(),
+            id: uuidv4(), // skapar ett unikt id 
             firstName: firstname.value,
             lastName: lastname.value,
             email: email.value,
